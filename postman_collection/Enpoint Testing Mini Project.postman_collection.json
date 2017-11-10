@@ -1,246 +1,259 @@
 {
-	"info": {
-		"name": "Enpoint Testing Mini Project",
-		"_postman_id": "19cc9f3c-5c32-bb75-dcf4-389952be47f0",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
+	"id": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+	"name": "Enpoint Testing Mini Project",
+	"description": "",
+	"order": [
+		"61350825-5980-4592-2f8e-ee23ac0f519e",
+		"ad80a106-9a3b-68a7-3de7-6b02448a78c1",
+		"ad0da852-b53b-e3e0-a387-97b9fa0982c3",
+		"ae49da5b-7b4d-da0f-6507-eb30fa961eb3",
+		"474ebc9c-5f62-6932-f63f-2a49795d52aa",
+		"c70c4f75-337e-32a1-837f-de92cce5d523",
+		"5e2eac0a-0b15-68e0-2cc1-a702196815ac",
+		"35217574-677f-8e99-f099-034f0a3d430a",
+		"f59dd39f-b335-0bce-52d3-b7a5a766a590"
+	],
+	"folders_order": [],
+	"folders": [],
+	"owner": "2755872",
+	"hasRequests": true,
+	"requests": [
 		{
-			"name": "GET - All Students",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:4000/api/students",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students"
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "GET - Student By Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:4000/api/students/9",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students",
-						"9"
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "GET - Students By Name",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:4000/api/students?name=la",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students"
-					],
-					"query": [
-						{
-							"key": "name",
-							"value": "la",
-							"equals": true
-						}
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "GET - Students By Grade",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:4000/api/students?grade=c",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students"
-					],
-					"query": [
-						{
-							"key": "grade",
-							"value": "c",
-							"equals": true
-						}
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "GET - Students By Email",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:4000/api/students?email=gdee@clickbank.net",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students"
-					],
-					"query": [
-						{
-							"key": "email",
-							"value": "gdee@clickbank.net",
-							"equals": true
-						}
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "GET - Students By Phone",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:4000/api/students?phone=608",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students"
-					],
-					"query": [
-						{
-							"key": "phone",
-							"value": "608",
-							"equals": true
-						}
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "PUT - Update Grade",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"current_grade\": \"A-\"\n}"
-				},
-				"url": {
-					"raw": "localhost:4000/api/students/15",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students",
-						"15"
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
+			"id": "35217574-677f-8e99-f099-034f0a3d430a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:4000/api/students",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test('Successfully adds a student named \"Tim Allen\"', ()=>{\n   const body = pm.response.json();\n   const tim = body.filter(student=>{\n       return student.student === 'Tim Allen';\n   });\n   pm.expect(tim[0].student).to.eql('Tim Allen');\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510339758598,
 			"name": "POST - Add Student",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"student\": \"Tim Allen\",\n    \"email_address\": \"tim@homeimprovement.com\",\n    \"phone\": \"(408) 8674530\",\n    \"current_grade\": \"B+\"\n}"
-				},
-				"url": {
-					"raw": "localhost:4000/api/students",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students"
-					]
-				},
-				"description": ""
-			},
-			"response": []
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": [],
+			"rawModeData": "{\n    \"student\": \"Tim Allen\",\n    \"email_address\": \"tim@homeimprovement.com\",\n    \"phone\": \"(408) 8674530\",\n    \"current_grade\": \"B+\"\n}"
 		},
 		{
+			"id": "474ebc9c-5f62-6932-f63f-2a49795d52aa",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:4000/api/students?email=gdee@clickbank.net",
+			"queryParams": [
+				{
+					"key": "email",
+					"value": "gdee@clickbank.net",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "pm.test('Response status equals 200', ()=>{\n    pm.response.to.have.status(200);\n});\n\npm.test('Student with email gdee@clickbank.net matches student object with id of 15', ()=>{\n    const gil = {\n        \"id\": 15,\n        \"student\": \"Gilbert De Gouy\",\n        \"email_address\": \"gdee@clickbank.net\",\n        \"phone\": \"(615) 2408518\",\n        \"current_grade\": \"B\"\n    };\n    const body = pm.response.json();\n    pm.expect(body[0]).to.eql(gil);\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510338253373,
+			"name": "GET - Students By Email",
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": []
+		},
+		{
+			"id": "5e2eac0a-0b15-68e0-2cc1-a702196815ac",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:4000/api/students/15",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test('Student\\'s current_grade equals \"A-\"',()=>{\n    const body = pm.response.json();\n    pm.expect(body[0].current_grade).to.eql('A-');\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510339208690,
+			"name": "PUT - Update Grade",
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": [],
+			"rawModeData": "{\n\t\"current_grade\": \"A-\"\n}"
+		},
+		{
+			"id": "61350825-5980-4592-2f8e-ee23ac0f519e",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:4000/api/students",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test('Testing that all 20 student objects were returned in res', ()=>{\n   const body = pm.response.json();\n   pm.expect(body.length).to.eql(20);\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510335384559,
+			"name": "GET - All Students",
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": []
+		},
+		{
+			"id": "ad0da852-b53b-e3e0-a387-97b9fa0982c3",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:4000/api/students?name=la",
+			"queryParams": [
+				{
+					"key": "name",
+					"value": "la",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "pm.test('Status code is 200', ()=>{\n    pm.response.to.have.status(200);\n});\n\npm.test('Return students whose name matches the string sent in', ()=>{\n    const body = pm.response.json();\n    let abey = body.filter(student=>{\n        return student.student === \"Abey Laynard\";\n    });\n    pm.expect(abey[0].student).to.eql(\"Abey Laynard\");\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510337446892,
+			"name": "GET - Students By Name",
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": []
+		},
+		{
+			"id": "ad80a106-9a3b-68a7-3de7-6b02448a78c1",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:4000/api/students/9",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "pm.test('Status code is 200', ()=>{\n    pm.response.to.have.status(200);\n});\n\npm.test('Student with id of 9 is returned', ()=>{\n   let patsy = {\n        \"id\": 9,\n        \"student\": \"Patsy Daunay\",\n        \"email_address\": \"pdaunay8@about.com\",\n        \"phone\": \"(806) 2654555\",\n        \"current_grade\": \"A\"\n    };\n   const body = pm.response.json();\n   pm.expect(body[0]).to.eql(patsy);\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510335980846,
+			"name": "GET - Student By Id",
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": []
+		},
+		{
+			"id": "ae49da5b-7b4d-da0f-6507-eb30fa961eb3",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:4000/api/students?grade=c",
+			"queryParams": [
+				{
+					"key": "grade",
+					"value": "c",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "pm.test('Status code is 200', ()=>{\n    pm.response.to.have.status(200);\n});\n\npm.test('Gets all students with a grade of \"C\"', ()=>{\n    const body = pm.response.json();\n    let flag = true;\n    body.forEach(student=>{\n        if(student.current_grade !== 'C'){\n            flag = false;\n        }\n    });\n    pm.expect(flag).to.eql(true);\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510337718247,
+			"name": "GET - Students By Grade",
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": []
+		},
+		{
+			"id": "c70c4f75-337e-32a1-837f-de92cce5d523",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:4000/api/students?phone=608",
+			"queryParams": [
+				{
+					"key": "phone",
+					"value": "608",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "pm.test('Status code is 200', ()=>{\n    pm.response.to.have.status(200);\n});\n\npm.test('Check for all students phone numbers that have the string \"608\" in them', ()=>{\n    const body = pm.response.json();\n    let flag = false;\n    body.forEach(student=>{\n        if(!student.phone.includes('608')){\n            flag = true;\n        }\n    });\n    pm.expect(flag).to.eql(false);\n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510338676196,
+			"name": "GET - Students By Phone",
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": []
+		},
+		{
+			"id": "f59dd39f-b335-0bce-52d3-b7a5a766a590",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:4000/api/students/18",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test('Removed student with id of 18', ()=>{\n   const body = pm.response.json();\n   pm.expect(body[0].id).to.eql(18); \n});",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510339885361,
 			"name": "DELETE - Remove Student",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "localhost:4000/api/students/18",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"api",
-						"students",
-						"18"
-					]
-				},
-				"description": ""
-			},
-			"response": []
+			"description": "",
+			"collectionId": "92683666-e82a-4236-4cda-1742eb9a9e9e",
+			"responses": []
 		}
 	]
 }
